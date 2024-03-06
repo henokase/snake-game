@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Tektur';
+    src: url(./tektur.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tektur', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    user-select: none;
+}
+
+.gameBoard {
+    background-color: #2b4c50;
+    padding: 1px;
+    border: 3px solid #6c0101;
+}
+
+.cboard {
+    position: relative;
+}
+
+.warning {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    width: 70%;
+}
+
+.wbtns {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.wbtns button {
+    width: 90px;
+    padding: 7px 20px;
+    border: 1px solid;
+    background-color: inherit;
+    color: #fff;
+}
+
+.wbtns button:active {
+    scale: 0.97;
+}
+
+.scoreBoard {
+    box-shadow: 0 2px 2px #474747;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+    margin-bottom: 7px;
+}
+
+.high {
+    animation: pop 0.3s 3;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-cont {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 7px 0px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #fff;
+    border: 1px solid #6c0101;
+    background-color: inherit;
+    width: 120px;
+}
+
+.btn:active {
+    scale: 0.98;
+}
+
+.controls {
+    margin-top: 50px;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+    display: none;
+}
+
+.ArrowUp {
+    grid-column: span 2;
+}
+
+.ArrowDown {
+    grid-column: span 2;
+}
+
+.controls div {
+    border: 1px solid green;
+    color: green;
+    width: 90px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.controls div:active {
+    scale: 0.9;
+}
+
+@media (max-width: 600px) {
+    .gameBoard {
+        width: 350px;
+        height: 350px;
+    }
+    .controls {
+        display: grid;
+    }
+}
