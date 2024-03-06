@@ -231,5 +231,8 @@ function saveHighScore() {
 
 function loadHighScore() {
     highScore = localStorage.getItem('High Score');
+    if(highScore === null) {
+        highScore = 0;
+    }
     highScoreText.textContent = highScore;
 }
